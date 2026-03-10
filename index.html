@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Big Tech Club — A Speculative Essay on Developer Identity</title>
+    <meta
+      name="description"
+      content="A speculative essay on what a better developer identity and discovery platform might look like — simpler than LinkedIn, more honest than GitHub profiles."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ─── Reset & Base ─────────────────────────────────────────────── */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --font-serif: "Lora", Georgia, "Times New Roman", serif;
+        --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+
+        --color-bg: #faf9f7;
+        --color-text: #2d2d2d;
+        --color-muted: #888;
+        --color-accent: #8b4513;
+        --color-rule: #e4dfd8;
+        --color-label: #a89080;
+
+        --size-body: clamp(1rem, 1.1vw + 0.7rem, 1.15rem);
+        --size-h1: clamp(1.9rem, 3vw + 1rem, 2.8rem);
+        --size-h2: clamp(1.25rem, 1.5vw + 0.8rem, 1.6rem);
+        --size-label: 0.72rem;
+
+        --leading-body: 1.78;
+        --leading-heading: 1.2;
+
+        --prose-width: 75ch;
+        --page-padding: clamp(1.5rem, 5vw, 4rem);
+      }
+
+      html {
+        font-size: 16px;
+      }
+
+      body {
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        font-family: var(--font-serif);
+        font-size: var(--size-body);
+        line-height: var(--leading-body);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* ─── Layout ────────────────────────────────────────────────────── */
+      .page {
+        max-width: var(--prose-width);
+        margin: 0 auto;
+        padding: 0 var(--page-padding);
+      }
+
+      /* ─── Header ────────────────────────────────────────────────────── */
+      .site-header {
+        padding: clamp(3rem, 8vw, 6rem) 0 clamp(2rem, 5vw, 3.5rem);
+      }
+
+      .site-name {
+        font-family: var(--font-sans);
+        font-size: var(--size-label);
+        font-weight: 500;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--color-label);
+        margin-bottom: 2.5rem;
+      }
+
+      .essay-kicker {
+        font-family: var(--font-sans);
+        font-size: var(--size-label);
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--color-label);
+        margin-bottom: 1rem;
+      }
+
+      h1 {
+        font-family: var(--font-serif);
+        font-size: var(--size-h1);
+        font-weight: 600;
+        line-height: var(--leading-heading);
+        letter-spacing: -0.02em;
+        color: var(--color-text);
+        margin-bottom: 1.25rem;
+      }
+
+      .essay-subtitle {
+        font-family: var(--font-serif);
+        font-size: clamp(1rem, 1vw + 0.6rem, 1.15rem);
+        font-style: italic;
+        color: var(--color-muted);
+        line-height: 1.55;
+        margin-bottom: 2rem;
+      }
+
+      .essay-meta {
+        font-family: var(--font-sans);
+        font-size: 0.8rem;
+        color: var(--color-muted);
+        letter-spacing: 0.04em;
+      }
+
+      /* ─── Rule ──────────────────────────────────────────────────────── */
+      .rule {
+        border: none;
+        border-top: 1px solid var(--color-rule);
+        margin: clamp(2.5rem, 5vw, 4rem) 0;
+      }
+
+      /* ─── Essay Sections ────────────────────────────────────────────── */
+      .essay-section {
+        margin-bottom: clamp(3rem, 6vw, 5rem);
+      }
+
+      .section-label {
+        display: block;
+        font-family: var(--font-sans);
+        font-size: var(--size-label);
+        font-weight: 500;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--color-label);
+        margin-bottom: 0.65rem;
+      }
+
+      h2 {
+        font-family: var(--font-serif);
+        font-size: var(--size-h2);
+        font-weight: 600;
+        line-height: var(--leading-heading);
+        letter-spacing: -0.02em;
+        color: var(--color-text);
+        margin-bottom: 1.5rem;
+      }
+
+      p {
+        margin-bottom: 1.35em;
+      }
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+
+      /* ─── First paragraph drop-cap feel (subtle) ───────────────────── */
+      .essay-section:first-of-type p:first-of-type::first-letter {
+        font-size: 3.4em;
+        font-weight: 600;
+        line-height: 0.8;
+        float: left;
+        margin-right: 0.08em;
+        margin-top: 0.05em;
+        color: var(--color-accent);
+      }
+
+      /* ─── Inline emphasis ───────────────────────────────────────────── */
+      em {
+        font-style: italic;
+      }
+      strong {
+        font-weight: 600;
+      }
+
+      /* ─── Pull note / aside ─────────────────────────────────────────── */
+      .aside {
+        border-left: 2px solid var(--color-rule);
+        margin: 2rem 0;
+        padding: 0.75rem 0 0.75rem 1.25rem;
+        color: var(--color-muted);
+        font-size: 0.92em;
+        font-style: italic;
+        line-height: 1.6;
+      }
+
+      /* ─── Footer ────────────────────────────────────────────────────── */
+      .site-footer {
+        padding: clamp(2rem, 5vw, 3.5rem) 0 clamp(3rem, 8vw, 5rem);
+      }
+
+      .footer-note {
+        font-family: var(--font-sans);
+        font-size: 0.8rem;
+        color: var(--color-muted);
+        line-height: 1.6;
+      }
+
+      .footer-note a {
+        color: var(--color-accent);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      /* ─── Responsive ────────────────────────────────────────────────── */
+      @media (max-width: 600px) {
+        .essay-section:first-of-type p:first-of-type::first-letter {
+          font-size: 2.8em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <p class="site-name">Big Tech Club</p>
+        <p class="essay-kicker">Speculative Essay</p>
+        <h1>A Better Place for Developers to Be Found</h1>
+        <p class="essay-subtitle">
+          On the gap between GitHub profiles and LinkedIn résumés, and what a
+          simpler, more honest developer identity layer might look like.
+        </p>
+        <p class="essay-meta">March 2026</p>
+      </header>
+
+      <hr class="rule" />
+
+      <!-- Section 1 -->
+      <section class="essay-section">
+        <span class="section-label">Part I</span>
+        <h2>The Problem with Developer Identity Online</h2>
+
+        <p>
+          There is no good place for a software engineer to simply exist on the
+          internet. GitHub is a version control host that doubles, awkwardly, as
+          a portfolio — and it does both jobs with obvious strain. A developer
+          who has spent three years building complex systems inside a private
+          corporate repository appears, to the outside world, as if they have
+          done nothing at all. Their contribution graph is a flatline. Their
+          pinned repositories are side projects from half a decade ago. The
+          signal is noise.
+        </p>
+
+        <p>
+          LinkedIn fills the gap in theory, but not in practice. Engineers
+          distrust it — and for good reason. It is a social network that demands
+          constant participation, surfaces the wrong kind of visibility, and
+          forces professional identity into a format designed for résumés and
+          recruiting pipelines rather than for the honest communication of what
+          someone actually knows and cares about. The notifications alone are
+          enough to make a reasonable person close the tab permanently.
+        </p>
+
+        <p>
+          The alternatives that tried to thread this needle — <em>read.cv</em>,
+          <em>Behance</em>, early portfolio tools — each solved part of the
+          problem before being acquired, pivoted, or shut down. What remains is
+          a gap: no platform lets a developer say, simply,
+          <em
+            >here is what I know, here is how well I know it, here is where I
+            am, and here is what I have built</em
+          >
+          — without requiring them to perform for an audience or tend a social
+          graph.
+        </p>
+
+        <p>
+          There is a more specific failure, too. No mainstream platform supports
+          self-reported skill levels. You can list technologies on LinkedIn, but
+          you cannot say you are a senior-level Elixir engineer with
+          intermediate Rust and a year of production Phoenix experience. That
+          level of granularity — the kind that actually helps someone decide
+          whether to reach out — simply does not exist in any structured,
+          filterable form.
+        </p>
+
+        <div class="aside">
+          The closest analogue might be Stack Overflow's developer survey, which
+          captures self-reported skill data in aggregate — but offers no
+          individual profile surface for discovery.
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <!-- Section 2 -->
+      <section class="essay-section">
+        <span class="section-label">Part II</span>
+        <h2>A Different Vision: Share and Be Found</h2>
+
+        <p>
+          Imagine something with the simplicity of Linktree, the intent of a
+          GitHub profile, and none of the social machinery of LinkedIn. A
+          developer profile that asks only: who are you, where are you, what do
+          you know, and what have you built? Everything else is noise.
+        </p>
+
+        <p>
+          The core interaction is self-report. You declare your overall level —
+          junior, mid-level, senior, architect, or however you choose to name
+          the progression — and then you list the technologies you work with,
+          each tagged with the level of competence you claim. You add a handful
+          of projects, with brief descriptions and optional links. You set your
+          location and whether you are open to opportunities. That is the whole
+          surface area of the profile.
+        </p>
+
+        <p>
+          There is no feed. No activity stream. No endorsements from colleagues
+          who want something in return. No algorithm deciding which version of
+          you to show to which employer. The profile is a document — stable,
+          editable, yours — not a performance.
+        </p>
+
+        <p>
+          The philosophy underneath this is local-first data ownership. Your
+          profile data should be portable. You should be able to export it, take
+          it elsewhere, or make it private at any time. A platform that holds
+          your professional identity hostage to its own survival is not a
+          trustworthy platform. The design of such a system should make data
+          portability obvious and easy — not an afterthought hidden in account
+          settings.
+        </p>
+
+        <p>
+          This is not a network in the traditional sense. There are no
+          connections to request, no DMs to manage, no company pages to follow.
+          Discovery is one-directional: someone searching for a senior Elixir
+          engineer in Lisbon finds you; you do not need to do anything to be
+          found except maintain an accurate profile. The asymmetry is
+          intentional. Engineers are tired of social overhead.
+        </p>
+      </section>
+
+      <hr class="rule" />
+
+      <!-- Section 3 -->
+      <section class="essay-section">
+        <span class="section-label">Part III</span>
+        <h2>How It Could Work</h2>
+
+        <p>
+          The profile is the atomic unit. Name, location (city and country, with
+          granularity controls), a short bio, overall skill level, and two
+          lists: technologies with self-reported levels, and projects with brief
+          descriptions. Nothing more is required. Optional fields — availability
+          status, preferred work type, contact preference — round it out without
+          demanding it.
+        </p>
+
+        <p>
+          Discovery works through filtering. A visitor to the platform can
+          search by location, by technology, by skill level, by availability.
+          The results are a grid of profiles — human-readable, not gamified by
+          follower counts or activity metrics. The filters are the product. A
+          small company looking for a freelance OCaml developer in Eastern
+          Europe should be able to find one in under a minute.
+        </p>
+
+        <p>
+          Groups are the second structural element. Curated communities —
+          language ecosystems, technology niches — can operate as semi-private
+          directories within the larger network. An Elixir community group might
+          have its own subdomain, its own modest customization, and its own
+          membership controls. Members can choose whether their profile is
+          visible only within the group, visible on the broader platform, or
+          both. Trust is layered: you choose how much of yourself to share with
+          which audience.
+        </p>
+
+        <div class="aside">
+          The group model mirrors what already exists informally — the Elixir
+          Slack, the OCaml Discord, the Gleam forum — but makes the membership
+          directory structured and searchable rather than scattered across
+          message threads.
+        </div>
+
+        <p>
+          The trust model is deliberately minimal. Claims are self-reported.
+          There is no verification theater, no endorsement system, no badge that
+          proves you are what you say you are. The assumption is that honest
+          self-representation is in the interest of the person making it —
+          overstatement in a profile leads to awkward conversations later, and
+          the platform's value depends on the accuracy of what people claim.
+          Trust is built by the design of the form, not by the machinery of
+          verification.
+        </p>
+
+        <p>
+          Web scraping is a real concern for any public directory. The design
+          response is not to wall everything off, but to be intentional about
+          what is public. Profile pages are human-readable and indexable — that
+          is a feature, not a vulnerability. But bulk data export, contact
+          harvesting, and API access without authentication are not supported.
+          The platform is designed to be useful to a person, not to a script.
+        </p>
+      </section>
+
+      <hr class="rule" />
+
+      <!-- Section 4 -->
+      <section class="essay-section">
+        <span class="section-label">Part IV</span>
+        <h2>Who Should Build This — and With Whom</h2>
+
+        <p>
+          This is not a good greenfield venture. A developer identity platform
+          with no members is worth nothing, and acquiring the first ten thousand
+          members from scratch, against the gravity of LinkedIn's network
+          effects, is a nearly impossible task for a small team with no existing
+          audience. The cold-start problem is the real problem.
+        </p>
+
+        <p>
+          The right approach is to build this as a layer on top of an existing
+          community — one that already has the trust of the developers it
+          serves. Technical media companies fit the profile: they have audiences
+          of practicing engineers who already identify with their brand and
+          visit regularly. Developer education platforms are another natural
+          fit. The ideal partner is any organization whose existing relationship
+          with developers is built on signal and quality rather than noise and
+          scale.
+        </p>
+
+        <p>
+          Language communities are a particularly compelling starting point. The
+          Elixir ecosystem, for example, is small enough that a well-designed
+          directory would be genuinely useful — and its members are already
+          self-selecting for a certain kind of thoughtfulness about tools and
+          craft. An Elixir-native profile directory, operated in partnership
+          with the community's existing leadership, could serve as proof of
+          concept before any broader platform ambitions are attempted.
+        </p>
+
+        <p>
+          The business model is not complicated. The base profile is free and
+          always will be. Community group licensing — a yearly fee for a
+          white-labeled subdomain with custom domain support — is the primary
+          revenue lever. Optional premium features for individual profiles (a
+          hosted blog, an extended project portfolio) could follow if demand
+          warrants. The model works only if the free tier is genuinely good.
+          Freemium on a trust-based platform fails the moment the incentive to
+          upsell becomes visible to users.
+        </p>
+
+        <p>
+          The deeper argument is this: a significant fraction of software
+          engineers have spent the last decade building their professional
+          presence on platforms they do not trust, cannot control, and find
+          actively unpleasant to use. That is not a niche complaint. It is a
+          widespread frustration with no current outlet. The opportunity is not
+          to build a better LinkedIn — it is to build something so much simpler
+          than LinkedIn that it doesn't feel like the same category of thing at
+          all.
+        </p>
+
+        <p>
+          Whether that is possible depends entirely on the first community
+          willing to try it.
+        </p>
+      </section>
+
+      <hr class="rule" />
+
+      <footer class="site-footer">
+        <p class="footer-note">
+          Big Tech Club is a speculative project exploring developer identity
+          and community infrastructure. If this resonates,
+          <a href="mailto:hello@bigtechclub.com">say hello</a>.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
