@@ -4,7 +4,7 @@ status: "concept-prototype"
 version: "0.1"
 site_role: "Independent public club"
 design_direction: "An atlas for AI engineering, with a directory of the people who practice it"
-review_artifact: "../index.html"
+review_artifact: "index.html"
 core_journeys:
   - "Open the atlas, choose a chapter, read, and check understanding"
   - "Filter the member directory, open a profile, and find a useful link"
@@ -54,7 +54,7 @@ A broadcast starts with a five-minute problem brief, moves into a fifteen-minute
 
 ## Architectural review
 
-The artifact is a static folder with one HTML entry point, shared styles, and one Atlas theme file containing the light and dark palettes. The header switch starts in light mode and remembers the reader’s choice locally. It uses local fixtures and shareable hash navigation. The route table describes intended public URLs. Live playback and chat are simulated, the print option is a concept, and applications stay on the device while the page is open. Member names and details are fictional. Production decisions include member publishing and consent, moderation, application review, and print fulfillment and charity reporting. A future service can live on Hetzner via Coolify while the book and public pages retain a static publishing path.
+The future app is a static folder with its own HTML, CSS, and JavaScript files. It uses the global Atlas theme at `../themes/atlas.css` and the shared switcher at `../components/theme-switcher.js`. The Atlas theme contains light and dark palettes. The switch uses a saved choice when one exists and otherwise starts in light mode. It uses local fixtures and shareable hash navigation. The route table describes intended public URLs. Live playback and chat are simulated, the print option is a concept, and applications stay on the device while the page is open. Member names and details are fictional. Production decisions include member publishing and consent, moderation, application review, and print fulfillment and charity reporting. A future service can live on Hetzner via Coolify while the book and public pages retain a static publishing path.
 
 Use local edits as the source for each review milestone. Dessn documents static HTML and initial folder upload, plus a local working-tree push to a frame copy through its MCP. For the first stage review, live-test one imported frame in Play, including navigation, map pins, quiz feedback, and directory filters. Then make a noticeable local edit and try one batched frame update. Check whether the existing review link still shows the new revision and compare account metering after the import and update. Standalone links to individual states use URL fragments, so board-wide review in separate native frames may eventually benefit from distinct static routes.
 
