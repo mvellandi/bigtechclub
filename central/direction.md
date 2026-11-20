@@ -25,7 +25,7 @@ Use external visual references for broad qualities only. Do not copy protected c
 
 ## Exploration intent
 
-Use this repository to explore designs for the main site and semi-independent microsites. The `/club-web/` route hosts named website variations. The `/twitter/` route previews the club’s social profile. Other routes can host other concepts.
+Use this repository as a UX workspace for independent brand experiences. The development launcher links to each app and its review scenarios. The `/club-web/` route hosts named website variations. The `/twitter/` route previews the club’s social profile. Future experiences can include email, internal tools, or a live show. Choose each app’s output for its intended use. An email preview should render the deliverable email.
 
 Preserve worthwhile creations for later review and reuse. Do not require separate Git branches for visual variants.
 
@@ -35,7 +35,7 @@ Keep reusable assets independent of the application in which they originated. Ma
 
 ## Current decisions and open questions
 
-The existing React implementation is a working prototype, not a fixed architectural target.
+Use TypeScript for new application boundaries. React is the current renderer. Evaluate Effect or Foldkit in a bounded experience when it has a concrete requirement.
 
 The target system should support complete microsite variants and selected page- or component-level substitutions. The required tooling and composition contracts remain open to validation.
 

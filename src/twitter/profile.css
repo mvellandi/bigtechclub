@@ -25,3 +25,5 @@ article { border-bottom: 1px solid #dae2dd; }
 .like { color: #52665a; border: 0; background: transparent; padding: .5rem .25rem; margin-top: .3rem; }
 .like[aria-pressed=true] { color: #9d2852; }
 :focus-visible { outline: 3px solid #1570a8; outline-offset: 2px; }
+
+.empty-posts { padding: 1rem 1.4rem; color: #54665e; }

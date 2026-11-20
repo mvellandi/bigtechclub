@@ -2,7 +2,9 @@ body { margin: 0; background: #f6f4ec; color: #193b30; font-family: Inter, syste
 .workspace { max-width: 50rem; margin: auto; padding: 8vh clamp(1.25rem, 6vw, 4rem); }
 .workspace header { padding-bottom: 1rem; border-bottom: 2px solid; font-weight: 700; }
 .workspace h1 { font: normal clamp(3.2rem, 8vw, 6rem)/1 Georgia, serif; letter-spacing: -.055em; }
-.workspace nav a { display: grid; grid-template-columns: auto 1fr auto; gap: 1.25rem; align-items: center; border-top: 1px solid #afbbb1; padding: 1.75rem .5rem; color: inherit; text-decoration: none; }
-.workspace nav a:hover { background: #e7ecdf; }
-.workspace strong { font-size: 1.4rem; }
-.workspace p { margin: .35rem 0 0; }
+.workspace section { border-top: 1px solid #afbbb1; padding: 1rem 0; }
+.workspace h2 { margin: 0; font-size: 1.5rem; }
+.workspace a { color: inherit; text-underline-offset: .2em; }
+.workspace summary { cursor: pointer; width: fit-content; padding: .6rem 0; }
+.workspace h3 { margin: .6rem 0; font-size: 1rem; }
+.workspace ul { display: flex; flex-wrap: wrap; gap: .75rem 1.25rem; list-style: none; padding: 0; margin: .5rem 0 1.1rem; }

@@ -1,7 +1,8 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { matchRoutes, useLocation } from 'react-router-dom';
 import { defaultVariant } from './default';
 import { variants } from './variants.dev';
+import { directoryScenarioName } from './manifest.dev';
 import './switcher.dev.css';
 
 type RouteMap = Readonly<Record<string, string>>;
@@ -21,18 +22,33 @@ function variantUrl(id: string, home: boolean) {
 
 export function VariantSwitcher({ active }: { active: (typeof variants)[number] }) {
   const dialog = useRef<HTMLDialogElement>(null);
-  const { pathname } = useLocation();
+  const { pathname, search } = useLocation();
+  const [copyStatus, setCopyStatus] = useState('');
   const page = pageAt(active.routes, pathname);
+
+  const scenario = page === 'members' ? directoryScenarioName(search) : undefined;
+
+  async function copyPreview() {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setCopyStatus('Preview URL copied.');
+    } catch {
+      setCopyStatus('Copy the preview URL from the address bar.');
+    }
+  }
 
   return (
     <aside className="dev-switcher" aria-label="Development tools">
       <button type="button" aria-haspopup="dialog" onClick={() => dialog.current?.showModal()}>Variants</button>
-      <dialog ref={dialog} aria-labelledby="dev-variant-title">
+      <dialog ref={dialog} onClose={() => setCopyStatus('')} aria-labelledby="dev-variant-title">
         <header>
           <h2 id="dev-variant-title">Club Web variants</h2>
           <form method="dialog"><button type="submit">Close</button></form>
         </header>
-        <p>Viewing {active.name} · <code>{pathname}</code></p>
+        <p>Viewing {active.name} · <code>{pathname}</code>{scenario && <> · {scenario}</>}</p>
+        <button type="button" onClick={copyPreview}>Copy preview URL</button>
+        <p role="status">{copyStatus}</p>
+        <a href="../">Back to workspace</a>
         {variants.filter(variant => variant.id !== active.id).map(variant => {
           const samePage = page !== undefined && pageAt(variant.routes, pathname) === page;
           return (

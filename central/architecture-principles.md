@@ -37,7 +37,7 @@ Promote a local resource to the shared library when another creation needs it. U
 
 ## Existing and custom implementations
 
-Prefer established, maintained implementations when they satisfy the requirement. Evaluate shadcn-compatible components, Base UI implementations, UI SDK behaviors, React Bits, and other suitable sources before writing a complex component.
+Prefer shadcn with Base UI for new standard React controls. Evaluate UI SDK Core for custom interaction behavior. Keep one owner for focus, selection, and keyboard handling per control.
 
 Do not create complex controls such as date pickers from scratch without a demonstrated need. Avoid implementing the same focus, keyboard, selection, or popup behavior twice.
 
@@ -47,7 +47,13 @@ Reserve custom implementation for requirements that existing resources cannot me
 
 ## Composition and development tooling
 
-Use explicit composition manifests for default page and component selections. Support substitutions only through declared semantic slots with compatible contracts.
+Each app owns its development preview manifest. The launcher consumes a name, entry URL, and groups of labeled links. Club Web derives its groups from its variant registry. The launcher has no dependency on the app renderer or router.
+
+A variant selects a named design. A scenario selects a repeatable state. Use route parameters for existing application state. Use a development-only fixture override when the state requires different data. A preview URL should reproduce its named state in a fresh tab.
+
+Club Web compares route IDs and matched paths before offering same-page navigation between variants. A target can have its own route table. The target home remains available when routes differ.
+
+Introduce a composition manifest when a real page needs interchangeable components. Declare a semantic slot and its contract at that point.
 
 A complete microsite variant may change its routes and workflows. A page variant should preserve the route's user journey and data contract. Use another microsite variant when those boundaries change.
 

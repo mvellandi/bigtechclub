@@ -36,7 +36,9 @@ function ProfilePage({ profile }: { profile: Profile }) {
   return (
     <main>
       <header>
-        <a href="../" aria-label="Return to Big Tech Club"><ArrowLeft /></a>
+        <a href="../" aria-label={import.meta.env.DEV ? 'Back to workspace' : 'Return to Big Tech Club'}>
+          <ArrowLeft />{import.meta.env.DEV && 'Workspace'}
+        </a>
         <div><strong>Twitter profile</strong><small>Channel preview</small></div>
       </header>
       <div className="banner" aria-hidden="true"><span>Big Tech<br /><i>Club.</i></span></div>
@@ -54,6 +56,7 @@ function ProfilePage({ profile }: { profile: Profile }) {
         <p><strong>{profile.followers + Number(following)}</strong> <span className="muted">followers</span></p>
       </section>
       <section aria-labelledby="posts"><h2 id="posts">Posts</h2>
+        {profile.posts.length === 0 && <p className="empty-posts">No posts yet.</p>}
         {profile.posts.map(post => <Post key={post.id} post={post} profile={profile} />)}
       </section>
     </main>

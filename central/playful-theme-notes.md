@@ -1,6 +1,6 @@
 ---
 title: Playful Theme Notes
-status: parked-ideas
+status: design-reference
 updated_at: "2026-11-20"
 ---
 
@@ -8,7 +8,7 @@ updated_at: "2026-11-20"
 
 ## Intent
 
-Explore a playful visual theme under a working name such as **Pocket Play** or **Field Quest**.
+Field Quest is a named development variant of Club Web. These notes describe its design direction and ideas for further exploration.
 
 Use friendly color, clear landmarks, tactile controls, and immediate feedback as broad references. Do not copy characters, logos, fonts, assets, or exact layouts from existing games or applications.
 
