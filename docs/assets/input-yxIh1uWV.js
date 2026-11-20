@@ -1,0 +1,1 @@
+import{l as e,s as t}from"./page-T9z_zooD.js";var n=e();function r({className:e,type:r=`text`,...i}){return(0,n.jsx)(`input`,{type:r,"data-slot":`input`,className:t(`field-control`,e),...i})}export{r as t};

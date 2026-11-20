@@ -1,24 +1,27 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-color-theme="pocket-atlas" data-component-theme="rounded" data-theme-mode="system">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Big Tech Club.">
-<title>Big Tech Club</title>
-<link rel="stylesheet" href="themes/atlas.css">
-<link rel="stylesheet" href="main.css">
-<script type="module" src="app.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Big Tech Club is a free field guide to AI engineering and a directory of the people who practice it.">
+  <meta name="theme-color" content="#f6f3e9">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <title>Big Tech Club</title>
+  <script>
+    (() => {
+      try {
+        const mode = localStorage.getItem('bigtechclub-theme') || 'system';
+        const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.dataset.theme = mode === 'dark' || (mode === 'system' && dark) ? 'dark' : 'light';
+        document.documentElement.dataset.themeMode = mode;
+      } catch {
+        document.documentElement.dataset.theme = 'light';
+      }
+    })();
+  </script>
 </head>
 <body>
-<header class="site-header">
-  <theme-switcher></theme-switcher>
-</header>
-<main>
-  <div class="page-copy">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-    <p>Donec ullamcorper nulla non metus auctor fringilla. Maecenas faucibus mollis interdum.</p>
-    <a href="future/index.html">Explore the future concept</a>
-  </div>
-</main>
+  <div id="root"></div>
+  <script type="module" src="./src/main.jsx"></script>
 </body>
 </html>

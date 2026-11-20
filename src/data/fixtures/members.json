@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "mina-rao",
+    "name": "Mina Rao",
+    "initials": "MR",
+    "city": "Berlin",
+    "region": "Europe",
+    "specialty": "Evaluation",
+    "interest": "Digital literacy",
+    "focus": "Building evaluation sets from support transcripts.",
+    "exploring": "How multilingual teams disagree on useful answers.",
+    "links": [
+      { "label": "Personal site", "url": "https://example.com/mina" },
+      { "label": "Field notes on evaluation", "url": "https://example.com/mina/notes" }
+    ]
+  },
+  {
+    "slug": "jonas-berg",
+    "name": "Jonas Berg",
+    "initials": "JB",
+    "city": "Copenhagen",
+    "region": "Europe",
+    "specialty": "Retrieval",
+    "interest": "Open source",
+    "focus": "Search pipelines for small, messy collections.",
+    "exploring": "What public libraries can do with better local search.",
+    "links": [
+      { "label": "Personal site", "url": "https://example.com/jonas" },
+      { "label": "Open-source search notes", "url": "https://example.com/jonas/search" }
+    ]
+  },
+  {
+    "slug": "amara-okafor",
+    "name": "Amara Okafor",
+    "initials": "AO",
+    "city": "Lagos",
+    "region": "Africa",
+    "specialty": "Evaluation",
+    "interest": "Education",
+    "focus": "Human review and useful grading rubrics.",
+    "exploring": "How beginners learn to tell a good evaluation case from a weak one.",
+    "links": [
+      { "label": "Research notes", "url": "https://example.com/amara" },
+      { "label": "Teaching resources", "url": "https://example.com/amara/teaching" }
+    ]
+  },
+  {
+    "slug": "sora-park",
+    "name": "Sora Park",
+    "initials": "SP",
+    "city": "Seoul",
+    "region": "Asia",
+    "specialty": "Operations",
+    "interest": "Open source",
+    "focus": "Rollout and recovery for small services.",
+    "exploring": "Operational tools that fit a two-person team.",
+    "links": [
+      { "label": "Operations handbook", "url": "https://example.com/sora" },
+      { "label": "Recovery drill template", "url": "https://example.com/sora/drills" }
+    ]
+  },
+  {
+    "slug": "elena-torres",
+    "name": "Elena Torres",
+    "initials": "ET",
+    "city": "Mexico City",
+    "region": "North America",
+    "specialty": "Retrieval",
+    "interest": "Digital literacy",
+    "focus": "Search across Spanish-language public resources.",
+    "exploring": "Ways to show uncertainty when an archive is incomplete.",
+    "links": [
+      { "label": "Personal site", "url": "https://example.com/elena" },
+      { "label": "Public archive project", "url": "https://example.com/elena/archive" }
+    ]
+  },
+  {
+    "slug": "luca-meyer",
+    "name": "Luca Meyer",
+    "initials": "LM",
+    "city": "Berlin",
+    "region": "Europe",
+    "specialty": "Operations",
+    "interest": "Education",
+    "focus": "Incident drills for teams shipping their first model feature.",
+    "exploring": "How to teach recovery with small hands-on exercises.",
+    "links": [
+      { "label": "Workshop notes", "url": "https://example.com/luca" },
+      { "label": "Incident exercise library", "url": "https://example.com/luca/exercises" }
+    ]
+  },
+  {
+    "slug": "noah-williams",
+    "name": "Noah Williams",
+    "initials": "NW",
+    "city": "Toronto",
+    "region": "North America",
+    "specialty": "Workflow",
+    "interest": "Public services",
+    "focus": "Human approval steps for high-volume public services.",
+    "exploring": "How service teams can make handoffs easier to audit.",
+    "links": [
+      { "label": "Service design notes", "url": "https://example.com/noah" },
+      { "label": "Workflow checklist", "url": "https://example.com/noah/checklist" }
+    ]
+  },
+  {
+    "slug": "priya-nair",
+    "name": "Priya Nair",
+    "initials": "PN",
+    "city": "Bengaluru",
+    "region": "Asia",
+    "specialty": "Workflow",
+    "interest": "Education",
+    "focus": "Small AI workflows for community learning groups.",
+    "exploring": "How to teach model limitations through practical exercises.",
+    "links": [
+      { "label": "Learning group", "url": "https://example.com/priya" },
+      { "label": "Workshop plans", "url": "https://example.com/priya/workshops" }
+    ]
+  }
+]

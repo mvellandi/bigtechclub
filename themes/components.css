@@ -1,0 +1,19 @@
+:root[data-component-theme='rounded'] {
+  --radius: 0.9rem;
+  --radius-sm: 0.55rem;
+  --radius-lg: 1.4rem;
+  --radius-xl: 2rem;
+  --control-radius: 0.75rem;
+  --border-width: 1px;
+  --component-shadow: 0 12px 36px color-mix(in srgb, var(--foreground) 8%, transparent);
+}
+
+:root[data-component-theme='precise'] {
+  --radius: 0;
+  --radius-sm: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --control-radius: 0;
+  --border-width: 1px;
+  --component-shadow: none;
+}

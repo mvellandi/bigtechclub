@@ -1,0 +1,37 @@
+{
+  "live": {
+    "eyebrow": "Live session · Field notes 014",
+    "title": "Can your assistant show its work?",
+    "description": "A working session on source quality, with a demo, a short interview, and audience questions. Mina Rao joins host Theo Hart.",
+    "date": "Today · 18:00–18:40 CET",
+    "duration": "40 minutes",
+    "program": [
+      { "time": "00:00–05:00", "title": "Problem brief" },
+      { "time": "05:00–20:00", "title": "Walkthrough of an answer with weak evidence" },
+      { "time": "20:00–30:00", "title": "Interview with Mina Rao" },
+      { "time": "30:00–40:00", "title": "Audience questions" }
+    ],
+    "chat": [
+      { "author": "Host", "message": "Bring a question your help center struggles to answer." },
+      { "author": "Mina", "message": "I’ll show a grading example before we open the floor." }
+    ]
+  },
+  "upcoming": {
+    "eyebrow": "Next session · Field notes 015",
+    "title": "Designing a useful human handoff",
+    "description": "Noah Williams brings a service workflow to the studio. We will map the point where automation stops and a person needs context.",
+    "date": "Thursday, 3 December · 18:00 CET",
+    "duration": "40 minutes",
+    "program": [
+      { "time": "00:00–05:00", "title": "The service and its users" },
+      { "time": "05:00–20:00", "title": "Live workflow mapping" },
+      { "time": "20:00–30:00", "title": "Interview with Noah Williams" },
+      { "time": "30:00–40:00", "title": "Audience questions" }
+    ]
+  },
+  "archive": [
+    { "slug": "source-quality", "title": "Can your assistant show its work?", "guest": "Mina Rao", "date": "12 November 2026", "duration": "38 min" },
+    { "slug": "small-evaluations", "title": "A small evaluation set that tells the truth", "guest": "Amara Okafor", "date": "29 October 2026", "duration": "41 min" },
+    { "slug": "recovery-drills", "title": "Practice the rollback before you need it", "guest": "Sora Park", "date": "15 October 2026", "duration": "36 min" }
+  ]
+}

@@ -1,0 +1,1 @@
+import{r as e}from"./rolldown-runtime-XKyaHtl9.js";import{y as t}from"./page-T9z_zooD.js";var n=e(t(),1);function r(e){(0,n.useEffect)(()=>{document.title=e?`${e} · Big Tech Club`:`Big Tech Club`},[e])}export{r as t};

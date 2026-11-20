@@ -15,3 +15,10 @@ Avoid vague words, idioms, metaphors, unnecessary jargon, marketing language, an
 Define specialized terms when the intended reader may not know them.
 Use numbered steps for procedures.
 State assumptions, constraints, risks, and expected results explicitly.
+
+## UI SDK
+
+Before using UI SDK, follow the ui-sdk skill if it is installed.
+Read `node_modules/@ui-sdk/react/docs/llms.txt`.
+To build a new UI SDK component, search `node_modules/@ui-sdk/react/docs/core.md` by heading.
+Read `node_modules/@ui-sdk/react/docs/rendering.md` with the core documentation.
