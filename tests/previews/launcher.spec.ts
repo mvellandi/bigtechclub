@@ -29,6 +29,9 @@ for (const app of experiences) {
           case 'Twitter profile':
             await checkTwitterPreview(page);
             break;
+          case 'Email':
+            await expect(page.getByRole('heading', { name: link.label })).toBeVisible();
+            break;
           default:
             throw new Error('Add preview verification for ' + app.name);
         }

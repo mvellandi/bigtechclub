@@ -3,11 +3,13 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vite';
 
+import { emailExports } from './src/email/export-plugin.tsx';
+
 const projectRoot = import.meta.dirname;
 
 export default defineConfig({
   base: './',
-  plugins: [react(), tailwindcss()],
+  plugins: [react(), tailwindcss(), emailExports()],
   publicDir: 'public',
   resolve: {
     alias: {

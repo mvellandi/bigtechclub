@@ -1,0 +1,15 @@
+Big Tech Club
+
+AI Engineering Atlas · Chapter 1
+
+
+FRAME THE PROBLEM
+
+Turn a promising AI use case into a task you can test.
+
+
+CHOOSE A TASK
+
+The support team wants to reduce time spent on repeat questions. Start with one job: answer public help-center questions using approved articles. Account-specific requests and topics with conflicting evidence go to a human.
+
+Read chapter 1 https://bigtechclub.com/club-web/#/book/frame
