@@ -15,6 +15,19 @@ async function checkClubPreview(page: Page, variant: string, label: string) {
       await expect(page.getByRole('heading', { name: 'No members on this trail' })).toBeVisible();
       await expect(page.getByRole('main').getByRole('status')).toHaveText('0 members');
       break;
+    case 'Table of contents':
+      await expect(page.getByRole('heading', { name: 'AI Engineering Atlas', exact: true })).toBeVisible();
+      await expect(page.getByRole('heading', { name: 'Table of contents', exact: true })).toBeVisible();
+      await expect(page.getByRole('link', { name: 'Begin with chapter one' })).toBeVisible();
+      break;
+    case 'Chapter 1 · Frame the problem':
+      await expect(page.getByRole('heading', { name: 'Frame the problem', exact: true })).toBeVisible();
+      await expect(page.getByText('Chapter 1 of 5', { exact: true })).toBeVisible();
+      await expect(page.getByRole('link', { name: 'Next chapter: Ground the system', exact: true })).toBeVisible();
+      await page.reload();
+      await expect(page.getByRole('heading', { name: 'Frame the problem', exact: true })).toBeVisible();
+      await expect(page.getByText('Chapter 1 of 5', { exact: true })).toBeVisible();
+      break;
     default:
       throw new Error('Add a Club Web assertion for ' + label);
   }
@@ -22,7 +35,7 @@ async function checkClubPreview(page: Page, variant: string, label: string) {
   await page.getByRole('button', { name: 'Variants' }).click();
   const dialog = page.getByRole('dialog');
   await expect(dialog).toContainText('Viewing ' + variant + ' ·');
-  if (label !== 'Home') await expect(dialog).toContainText(label);
+  if (label === 'Members in Berlin' || label === 'No matches') await expect(dialog).toContainText(label);
 }
 
 async function checkTwitterPreview(page: Page, label: string) {

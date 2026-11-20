@@ -22,8 +22,14 @@ export const clubWebManifest: ExperienceManifest = {
   href,
   previews: variants.map(variant => {
     const entry = variant.id === defaultVariant.id ? href : href + '?variant=' + encodeURIComponent(variant.id);
-    const links = [{ label: 'Home', href: entry }];
-    if ('members' in variant.routes) {
+    const variantPreviews = 'previews' in variant ? variant.previews : undefined;
+    const links = variantPreviews
+      ? variantPreviews.map(preview => ({
+          label: preview.label,
+          href: entry + (preview.path === '/' ? '' : '#' + preview.path),
+        }))
+      : [{ label: 'Home', href: entry }];
+    if (!variantPreviews && 'members' in variant.routes) {
       for (const { label, query } of directoryScenarios) {
         links.push({ label, href: entry + '#' + variant.routes.members + '?' + query });
       }
