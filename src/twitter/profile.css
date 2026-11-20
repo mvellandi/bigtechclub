@@ -1,0 +1,27 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #f3f5f3; color: #15231e; font: 1rem/1.45 Inter, system-ui, sans-serif; }
+main { max-width: 44rem; margin: auto; min-height: 100vh; background: white; border-inline: 1px solid #d4ded7; }
+header, .profile-actions, .pin, .like, a { display: flex; align-items: center; gap: .5rem; }
+header { padding: .75rem 1.25rem; gap: 1rem; }
+header strong, header small { display: block; }
+header small, .muted, .pin { color: #54665e; }
+a { display: inline-flex; color: #17614b; text-underline-offset: 3px; }
+.banner { position: relative; overflow: hidden; isolation: isolate; padding: 1.5rem 2rem 2.2rem; background: #164d44; color: #f3f5cd; }
+.banner span { font: 600 clamp(2.6rem, 9vw, 5rem)/.87 Georgia, serif; letter-spacing: -.07em; }
+.banner::after { content: ''; position: absolute; z-index: -1; width: 62%; aspect-ratio: 1; right: -8%; top: -35%; border-radius: 50%; background: repeating-radial-gradient(ellipse at 60% 50%, transparent 0 12px, #aed18a 13px 15px, transparent 16px 22px); transform: rotate(-24deg) scaleX(.9); }
+.identity, article { padding: 1rem 1.4rem; }
+.profile-actions { position: relative; margin-top: -2.4rem; justify-content: space-between; align-items: flex-end; }
+.avatar { display: inline-grid; align-content: center; grid-auto-flow: column; justify-content: center; flex: none; width: 2.65rem; height: 2.65rem; border-radius: 50%; background: #d8ed9f; color: #123f35; font: bold 1.5rem Georgia, serif; letter-spacing: -.1em; }
+.profile-actions .avatar { width: 5rem; height: 5rem; border: 4px solid white; font-size: 3rem; }
+button { font: inherit; cursor: pointer; }
+.follow { border: 1px solid #132820; background: #132820; color: white; padding: .45rem 1.2rem; border-radius: 2rem; font-weight: 650; }
+.follow[aria-pressed=true] { background: white; color: #132820; }
+h1 { margin: .8rem 0 0; font-size: 1.6rem; }
+p { margin: .7rem 0; }
+h2 { font-size: 1rem; padding: .65rem 1.4rem; border-bottom: 2px solid #245b49; margin: 0; }
+article { border-bottom: 1px solid #dae2dd; }
+.post { display: flex; gap: .75rem; }
+.pin { margin: 0 0 .75rem 3.4rem; }
+.like { color: #52665a; border: 0; background: transparent; padding: .5rem .25rem; margin-top: .3rem; }
+.like[aria-pressed=true] { color: #9d2852; }
+:focus-visible { outline: 3px solid #1570a8; outline-offset: 2px; }

@@ -1,0 +1,1 @@
+function e(e,t=!1){return e===`start`?t?`right`:`left`:e===`end`?t?`left`:`right`:e}var t={top:`bottom`,bottom:`top`,left:`right`,right:`left`};export{e as n,t};

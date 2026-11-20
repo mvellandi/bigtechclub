@@ -1,0 +1,65 @@
+.field-quest {
+  --quest-sky: #c6e6fb;
+  --quest-ink: #172d40;
+  --quest-paper: #fff4cb;
+  --quest-leaf: #c9e9ae;
+  --quest-coral: #ff9877;
+  --control-radius: 1.5rem;
+  color: var(--foreground);
+  background: var(--background);
+}
+[data-theme='dark'] .field-quest {
+  --quest-sky: #163545;
+  --quest-ink: #f1f5e7;
+  --quest-paper: #40371d;
+  --quest-leaf: #244836;
+  --quest-coral: #813f30;
+}
+.quest-header, .quest-home {
+  border: 2px solid var(--quest-ink);
+  color: var(--quest-ink);
+}
+.quest-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 2rem;
+  padding: 1rem var(--space-page);
+  background: var(--quest-paper);
+  border-width: 0 0 2px;
+}
+.quest-brand, .quest-header nav { display: flex; align-items: center; gap: .5rem; }
+.quest-brand { font-size: 1.35rem; font-weight: 800; text-decoration: none; }
+.quest-header nav a { padding: .4rem .7rem; border-radius: 2rem; text-decoration: none; }
+.quest-header nav a[aria-current='page'] { background: var(--quest-ink); color: var(--quest-paper); }
+.quest-home {
+  padding: clamp(1.25rem, 5vw, 4rem);
+  border-radius: 2rem;
+  background-color: var(--quest-sky);
+  background-image: radial-gradient(color-mix(in srgb, var(--quest-ink) 17%, transparent) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+.quest-home h1 { font: 800 clamp(3rem, 8vw, 6.8rem)/.98 var(--font-sans); letter-spacing: -.06em; }
+.quest-home .intro { color: inherit; }
+.quest-trails { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; margin-top: 3rem; }
+.quest-trails a {
+  position: relative;
+  display: grid;
+  gap: .5rem;
+  padding: 1.5rem;
+  color: inherit;
+  background: var(--quest-leaf);
+  border: 2px solid;
+  border-radius: 1.25rem;
+  box-shadow: 4px 4px 0 var(--quest-ink);
+  text-decoration: none;
+}
+.quest-trails a + a { background: var(--quest-coral); }
+.quest-trails a:is(:hover, :focus-visible) strong { text-decoration: underline; }
+.quest-trails strong { font-size: 1.5rem; }
+.quest-trails svg:last-child { position: absolute; top: 1rem; right: 1rem; }
+@media (max-width: 640px) {
+  .quest-header nav { order: 1; width: 100%; justify-content: space-between; gap: 0; }
+  .quest-trails { grid-template-columns: 1fr; }
+}

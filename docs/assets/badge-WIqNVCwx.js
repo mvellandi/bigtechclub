@@ -1,1 +1,0 @@
-import{c as e,l as t,s as n}from"./page-T9z_zooD.js";var r=t(),i=e(`badge`,{variants:{variant:{default:`badge-default`,secondary:`badge-secondary`,outline:`badge-outline`}},defaultVariants:{variant:`default`}});function a({className:e,variant:t,...a}){return(0,r.jsx)(`span`,{className:n(i({variant:t}),e),...a})}export{a as t};

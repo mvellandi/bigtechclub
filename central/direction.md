@@ -25,7 +25,7 @@ Use external visual references for broad qualities only. Do not copy protected c
 
 ## Exploration intent
 
-Use this repository to explore designs for the main site and semi-independent microsites. The `/future/` route is a speculative-fiction microsite. Other routes can host other concepts.
+Use this repository to explore designs for the main site and semi-independent microsites. The `/club-web/` route hosts named website variations. The `/twitter/` route previews the club’s social profile. Other routes can host other concepts.
 
 Preserve worthwhile creations for later review and reuse. Do not require separate Git branches for visual variants.
 

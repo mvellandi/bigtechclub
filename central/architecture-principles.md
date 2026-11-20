@@ -13,7 +13,7 @@ Keep the main application deployable as static files on GitHub Pages. Use Vite a
 
 Use local JSON fixtures behind small asynchronous data-source interfaces. A future remote backend-for-frontend can implement the same interfaces. Keep private credentials and privileged operations out of browser code.
 
-The current main site and `/future/` entry share a React implementation. The intended separation into independent microsite variants has not been implemented.
+The development root opens the workspace launcher. The production root opens the default Club Web variation. Club Web and the mock Twitter profile have separate HTML entries.
 
 ## Target exploration model
 

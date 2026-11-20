@@ -1,0 +1,10 @@
+{
+  "name": "Big Tech Club",
+  "handle": "@bigtechclub",
+  "bio": "An independent club for AI engineers. Read the open book, share field notes, and meet the people building useful systems.",
+  "followers": 218,
+  "posts": [
+    { "id": "atlas", "date": "2026-11-19", "text": "Our free AI Engineering Atlas follows one support assistant from its first design to release. Start with chapter one: what would a useful answer look like?", "link": "../club-web/#/book", "label": "Read the AI Engineering Atlas", "likes": 32, "pinned": true },
+    { "id": "directory", "date": "2026-11-17", "text": "Who else is working on evaluation? The member directory lets you find people by specialty, location, or a question you both care about.", "link": "../club-web/#/members", "label": "Meet the members", "likes": 18, "pinned": false }
+  ]
+}

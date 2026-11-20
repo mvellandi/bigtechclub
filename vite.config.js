@@ -16,10 +16,11 @@ export default defineConfig({
   },
   build: {
     outDir: 'docs',
-    rollupOptions: {
+    rolldownOptions: {
       input: {
         main: resolve(projectRoot, 'index.html'),
-        future: resolve(projectRoot, 'future/index.html')
+        clubWeb: resolve(projectRoot, 'club-web/index.html'),
+        twitter: resolve(projectRoot, 'twitter/index.html')
       }
     }
   }
