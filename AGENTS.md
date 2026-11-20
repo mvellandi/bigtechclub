@@ -7,8 +7,8 @@ Prefer established, well-maintained libraries over custom implementations.
 ## UX workspace
 
 1. Read `central/direction.md` and `central/architecture-principles.md` before changing an app boundary.
-2. For a new Club Web design, add `src/club-web/variants/<id>/`. Define its ID, display name, routes, loader, and named previews in `variant.ts`. Add one registry entry in `variants.dev.ts`. Put journey coverage in `tests/previews/`. Change the production default only when requested.
-3. For a review state, add a reproducible URL to the owning app’s `manifest.dev.ts` or the Club Web variant’s `previews`. Keep fixture overrides development-only.
+2. For an app with a variant registry, define each design and its named previews in `src/<app>/variants/<id>/variant.ts`. Follow the app’s contract. Register the variant once in `variants.dev.ts`. Add journey coverage under `tests/previews/`. Change the production default only when requested.
+3. Use the document query parameter `variant` to select a design. Use `scenario` for fixture-backed states. Use the normal route and filters for states they already represent. Verify each named preview URL in a fresh tab.
 4. For parallel T3 work, give each implementer one variant directory and a review journey. Assign registry integration and the final `docs/` build to one owner.
 5. Run `npm run typecheck` and `npm run build`. After changing previews, run `npm run test:previews`. Install the test browser once with `npx playwright install chromium`. Hand back the preview URL, the checks performed, and any remaining human review.
 
