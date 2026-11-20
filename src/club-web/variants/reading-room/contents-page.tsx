@@ -1,15 +1,16 @@
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { dataSource } from '@/data/data-source';
+import { useData } from '@/hooks/use-data';
 import { usePageTitle } from '@/hooks/use-page-title';
 import { BookError, BookLoading } from './states';
-import { useBook } from './use-book';
 
 export function ContentsPage() {
   usePageTitle('AI Engineering Atlas · Reading Room');
-  const { status, book, retry } = useBook();
+  const { status, data: book, retry } = useData(dataSource.getBook);
 
   if (status === 'loading') return <BookLoading label="Opening the table of contents" />;
-  if (status === 'error' || !book) return <BookError retry={retry} />;
+  if (status === 'error') return <BookError retry={retry} />;
 
   return (
     <>

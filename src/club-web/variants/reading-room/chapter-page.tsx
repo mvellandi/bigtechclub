@@ -1,18 +1,19 @@
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
 import { ChapterQuiz } from '@/components/chapter-quiz';
+import { dataSource } from '@/data/data-source';
+import { useData } from '@/hooks/use-data';
 import { usePageTitle } from '@/hooks/use-page-title';
 import { BookError, BookLoading } from './states';
-import { useBook } from './use-book';
 
 export function ChapterPage() {
   const { slug } = useParams();
-  const { status, book, retry } = useBook();
+  const { status, data: book, retry } = useData(dataSource.getBook);
   const chapter = book?.chapters.find((entry) => entry.slug === slug);
   usePageTitle(chapter ? `${chapter.title} · Reading Room` : status === 'success' ? 'Chapter not found · Reading Room' : 'Reading Room');
 
   if (status === 'loading') return <BookLoading label="Opening the chapter" />;
-  if (status === 'error' || !book) return <BookError retry={retry} />;
+  if (status === 'error') return <BookError retry={retry} />;
   if (!chapter) {
     return (
       <section className="rr-message">

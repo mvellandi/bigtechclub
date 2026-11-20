@@ -1,4 +1,1 @@
-export const defaultVariant = {
-  id: 'pocket-atlas',
-  load: () => import('./variants/pocket-atlas/App'),
-};
+export { pocketAtlasRuntime as defaultVariant } from './variants/pocket-atlas/runtime';

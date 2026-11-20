@@ -1,20 +1,13 @@
 import { defaultVariant } from './default';
-import { clubRoutes } from './routes';
-import { readingRoomRoutes } from './variants/reading-room/routes';
+import type { VariantDefinition } from './variant';
+import { fieldQuestVariant } from './variants/field-quest/variant';
+import { pocketAtlasVariant } from './variants/pocket-atlas/variant';
+import { readingRoomVariant } from './variants/reading-room/variant';
 
-export const variants = [
-  { ...defaultVariant, name: 'Pocket Atlas', routes: clubRoutes },
-  { id: 'field-quest', name: 'Field Quest', routes: clubRoutes, load: () => import('./variants/field-quest/App') },
-  {
-    id: 'reading-room',
-    name: 'Reading Room',
-    routes: readingRoomRoutes,
-    previews: [
-      { label: 'Table of contents', path: readingRoomRoutes.home },
-      { label: 'Chapter 1 · Frame the problem', path: '/book/frame' },
-    ],
-    load: () => import('./variants/reading-room/App'),
-  },
+export const variants: VariantDefinition[] = [
+  pocketAtlasVariant,
+  fieldQuestVariant,
+  readingRoomVariant,
 ];
 
 export function developmentVariant() {

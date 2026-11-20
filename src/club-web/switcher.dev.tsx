@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { matchRoutes, useLocation } from 'react-router-dom';
 import { defaultVariant } from './default';
 import { variants } from './variants.dev';
-import { directoryScenarioName } from './manifest.dev';
+import { directoryScenarioName } from './directory-previews';
 import './switcher.dev.css';
 
 type RouteMap = Readonly<Record<string, string>>;

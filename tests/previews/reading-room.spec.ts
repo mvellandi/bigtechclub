@@ -11,6 +11,13 @@ async function expectNoHorizontalOverflow(page: Page) {
   expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.viewportWidth);
 }
 
+test('Reading Room table of contents preview renders the book and chapter list', async ({ page }) => {
+  await page.goto(entry);
+  await expect(page.getByRole('heading', { name: 'AI Engineering Atlas', exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Table of contents', exact: true })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Begin with chapter one' })).toBeVisible();
+});
+
 test('Reading Room chapter preview opens from the launcher in a fresh tab', async ({ page, context }) => {
   await page.goto('/');
   const appRow = page.locator('section').filter({ has: page.getByRole('heading', { name: 'Club Web', exact: true }) });
