@@ -1,1 +1,0 @@
-import{c as e,l as t}from"./App-kApPvGVP.js";import{t as n}from"./jsx-runtime-C3cWAN_r.js";var r=n(),i=t(`badge`,{variants:{variant:{default:`badge-default`,secondary:`badge-secondary`,outline:`badge-outline`}},defaultVariants:{variant:`default`}});function a({className:t,variant:n,...a}){return(0,r.jsx)(`span`,{className:e(i({variant:n}),t),...a})}export{a as t};

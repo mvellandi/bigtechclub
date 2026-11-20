@@ -1,3 +1,4 @@
+import { clubRoutes } from './routes';
 import { lazy, Suspense, useEffect, useRef } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { SiteFooter } from '@/components/site-footer';
@@ -32,16 +33,16 @@ export function ClubLayout({ header, home }) {
         <div className="wrap">
           <Suspense fallback={<LoadingGrid label="Loading page" />}>
             <Routes>
-              <Route path="/" element={home} />
-              <Route path="/book" element={<BookPage />} />
-              <Route path="/book/landscape" element={<LandscapePage />} />
-              <Route path="/book/print" element={<PrintPage />} />
-              <Route path="/book/:slug" element={<ChapterPage />} />
-              <Route path="/members" element={<DirectoryPage />} />
-              <Route path="/members/:slug" element={<MemberPage />} />
-              <Route path="/live" element={<LivePage />} />
-              <Route path="/live/apply" element={<ContributePage />} />
-              <Route path="/mission" element={<MissionPage />} />
+              <Route path={clubRoutes.home} element={home} />
+              <Route path={clubRoutes.book} element={<BookPage />} />
+              <Route path={clubRoutes.landscape} element={<LandscapePage />} />
+              <Route path={clubRoutes.print} element={<PrintPage />} />
+              <Route path={clubRoutes.chapter} element={<ChapterPage />} />
+              <Route path={clubRoutes.members} element={<DirectoryPage />} />
+              <Route path={clubRoutes.member} element={<MemberPage />} />
+              <Route path={clubRoutes.live} element={<LivePage />} />
+              <Route path={clubRoutes.contribute} element={<ContributePage />} />
+              <Route path={clubRoutes.mission} element={<MissionPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>
