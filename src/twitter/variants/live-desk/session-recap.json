@@ -1,0 +1,41 @@
+{
+  "name": "Big Tech Club",
+  "handle": "@bigtechclub",
+  "bio": "An independent club for AI engineers. We tested a support assistant in public and turned the session into reusable working notes.",
+  "followers": 251,
+  "session": {
+    "topic": "Evaluating AI support assistants",
+    "state": "recap",
+    "label": "Session recap",
+    "summary": "The completed session, with the evaluation checklist, test results, and next steps."
+  },
+  "posts": [
+    {
+      "id": "session-recap",
+      "date": "2026-11-20T21:18:00Z",
+      "text": "Session complete: 22 of 24 test cases now pass. We kept the two missing-context failures visible and published the evaluation checklist so you can repeat the run.",
+      "link": "../club-web/#/live",
+      "label": "Open the session recap and evaluation checklist",
+      "likes": 68,
+      "pinned": false
+    },
+    {
+      "id": "session-brief",
+      "date": "2026-11-20T18:30:00Z",
+      "text": "We are live. Bring a difficult support question and help us test whether the assistant knows when to answer, cite a source, or stop.",
+      "link": "../club-web/#/live",
+      "label": "View the live session brief",
+      "likes": 41,
+      "pinned": true
+    },
+    {
+      "id": "test-set",
+      "date": "2026-11-20T17:05:00Z",
+      "text": "Before the session: our test set covers direct answers, conflicting sources, missing context, and questions the assistant should not answer.",
+      "link": "../club-web/#/book",
+      "label": "Read the AI Engineering Atlas",
+      "likes": 25,
+      "pinned": false
+    }
+  ]
+}

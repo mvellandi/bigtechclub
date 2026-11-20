@@ -1,0 +1,41 @@
+{
+  "name": "Big Tech Club",
+  "handle": "@bigtechclub",
+  "bio": "An independent club for AI engineers. We are testing a support assistant in public and sharing the working notes as we go.",
+  "followers": 243,
+  "session": {
+    "topic": "Evaluating AI support assistants",
+    "state": "in-progress",
+    "label": "Session in progress",
+    "summary": "A live working session on retrieval, source citations, and safe refusals."
+  },
+  "posts": [
+    {
+      "id": "first-evaluation-run",
+      "date": "2026-11-20T19:42:00Z",
+      "text": "Latest run: 18 of 24 test cases passed. The assistant cites sources well, but two missing-context cases need a clearer refusal. We are adding those cases to the checklist now.",
+      "link": "../club-web/#/live",
+      "label": "Open the session notes and evaluation checklist",
+      "likes": 47,
+      "pinned": false
+    },
+    {
+      "id": "session-brief",
+      "date": "2026-11-20T18:30:00Z",
+      "text": "We are live. Bring a difficult support question and help us test whether the assistant knows when to answer, cite a source, or stop.",
+      "link": "../club-web/#/live",
+      "label": "View the live session brief",
+      "likes": 36,
+      "pinned": true
+    },
+    {
+      "id": "test-set",
+      "date": "2026-11-20T17:05:00Z",
+      "text": "Before the session: our test set covers direct answers, conflicting sources, missing context, and questions the assistant should not answer.",
+      "link": "../club-web/#/book",
+      "label": "Read the AI Engineering Atlas",
+      "likes": 21,
+      "pinned": false
+    }
+  ]
+}
