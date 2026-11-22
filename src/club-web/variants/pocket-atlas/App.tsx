@@ -1,9 +1,7 @@
-import { lazy } from 'react';
 import { SiteHeader } from '@/components/site-header';
 import { ClubLayout } from '../../club-layout';
-
-const Home = lazy(() => import('./home-page').then(({ HomePage }) => ({ default: HomePage })));
+import { HomePage } from './home-page';
 
 export default function PocketAtlas() {
-  return <ClubLayout header={<SiteHeader />} home={<Home />} />;
+  return <ClubLayout header={<SiteHeader />} home={<HomePage />} />;
 }

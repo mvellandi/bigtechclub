@@ -1,0 +1,1 @@
+import{c as e}from"./use-page-title-BxROm63W.js";import{t}from"./jsx-runtime-C3cWAN_r.js";var n=t();function r({className:t,type:r=`text`,...i}){return(0,n.jsx)(`input`,{type:r,"data-slot":`input`,className:e(`field-control`,t),...i})}export{r as t};

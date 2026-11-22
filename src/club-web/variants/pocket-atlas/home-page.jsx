@@ -2,7 +2,7 @@ import { ArrowRight, BookOpen, CalendarDays, HeartHandshake, Radio, Users } from
 import { Link } from 'react-router-dom';
 import { AtlasMap } from '@/components/atlas-map';
 import { ChapterList, MemberCard } from '@/components/content';
-import { ErrorState, LoadingGrid } from '@/components/page';
+import { ErrorState } from '@/components/page';
 import { Button } from '@/components/ui/button';
 import { dataSource } from '@/data/data-source';
 import { useData } from '@/hooks/use-data';
@@ -12,10 +12,6 @@ export function HomePage() {
   usePageTitle();
   const { status, data, retry } = useData(dataSource.getHome);
 
-  if (status === 'loading') return <LoadingGrid label="Loading the club overview" />;
-  if (status === 'error') return <ErrorState retry={retry} />;
-
-  const { book, members, program } = data;
   return (
     <>
       <section className="hero">
@@ -30,11 +26,21 @@ export function HomePage() {
           <p className="hero-note"><HeartHandshake aria-hidden="true" />Independent, public, and free to explore.</p>
         </div>
         <div className="hero-visual atlas-frame">
-          <AtlasMap chapters={book.chapters} interactive />
+          <AtlasMap chapters={data?.book.chapters ?? []} interactive />
           <div className="atlas-meta"><strong>The AI Engineering Atlas</strong><span>Vol. 01 · Five regions</span></div>
         </div>
       </section>
 
+      {status === 'loading' && <p className="sr-only" role="status">Loading the club overview</p>}
+      {status === 'error' && <ErrorState retry={retry} />}
+      {status === 'success' && <HomeSections {...data} />}
+    </>
+  );
+}
+
+function HomeSections({ book, members, program }) {
+  return (
+    <>
       <section className="section split-feature rule">
         <div>
           <p className="eyebrow">The book</p>
